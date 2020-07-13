@@ -368,8 +368,7 @@ window.addEventListener("load", function () {
         canvas.width = h;
         canvas.height = w;
         c.rotate(Math.PI * 0.5);
-        //c.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, -h, w, h);
-        c.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, w, h);
+        c.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, -h, w, h);
         c.rotate(-Math.PI * 0.5);
     }
     function drawExif8(img){
