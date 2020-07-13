@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" type="image/x-icon" href="datas/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="datas/apple-touch-icon-180x180.png" />　
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <title>Checklot</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="home">
+      <div id="btn-info"><i class="fas fa-info-circle"></i></div>
+      <div id="info-back"><div id="info">
+        <button id="btn-close" style="position: -webkit-sticky; position:sticky;"><i class="fas fa-times"></i><br />Close</button>
+        <div class="paragraph">
+            <h3>Checklotとは？</h3>
+            <p>
+              複数の選択肢の中から、ランダムに1つ抽選してくれるWebアプリケーションです。
+              あみだくじやルーレットよりも円滑に抽選が進められます。<br />
+              *スマートフォン推奨のアプリケーションです。
+            </p>
+          </div>
+          <div class="paragraph">
+              <h3>使い方</h3>
+              <p>
+                ①まずはホーム画面の「TAP(CLICK)」と書いてある丸ボタンをタップ(クリック)してください。<br />
+                ②写真が選択できるので、抽選したい選択肢が写っている写真を撮影するか、写真フォルダから選択してください。<br />
+                ③その写真が画面に表示されるので、選択肢をドラッグして丸で囲んでください。
+                丸は何個書いても構いません。間違って丸を付けてしまったら、左下の「Reset」ボタンで丸をリセットできます。
+                写真を選び直したい場合は、リロードしてホーム画面に戻ってください。
+                丸を付け終わったら、右下の「Draw lots」ボタン押すことで抽選が始まります。<br />
+                ④抽選が終わったら、下の「Home」ボタンでホーム画面に戻れます。
+              </p>
+            </div>
+            <div class="paragraph">
+                <h3>連絡先</h3>
+                <p>
+                  何かあれば<br />
+                  ttttt.fms5(at)gmail.com<br />
+                  まで連絡をお願いします。<br />
+                  <a href="http://tea-kawashima.work" target=”_blank”>管理者ホームページ</a>
+                </p>
+              </div>
+              <div class="paragraph"><p class="footer">Copyright (c) 2019 T.Kawashima All rights reserved.</p></div>
+      </div></div>
+      <div id="title"><span>Checklot</span></div>
+      <label for="input-image" class="circle">
+        <div class="circle-inner">
+        <span class="blinking">TAP</span>
+        <input type="file" id="input-image" accept="image/*" value="写真を撮影" />
+        </div>
+      </label>
+</div>
+
+  <canvas id="main-canvas">＊現在のブラウザはHTML5に対応していません＊</canvas><br />
+  <button id="btn-clear" class="btn-blue btn-bottom"><i class="fas fa-eraser"></i><br />Reset</button>
+  <button id="btn-choice" class="btn-red btn-bottom"><i class="fas fa-check"></i><br />Draw lots</button>
+  <button id="btn-decide" class="btn-red btn-bottom"><i class="fas fa-home"></i><br />Home</button>
+  <audio id="sound-drum"><source src="datas/drum-roll1.mp3">＊ご利用のブラウザでは音が再生されません＊</audio>
+  <audio id="sound-cymbal"><source src="datas/roll-finish1.mp3"></audio>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

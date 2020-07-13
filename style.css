@@ -1,0 +1,320 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: 'Arial',YuGothic,'Yu Gothic','メイリオ', Meiryo,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url(datas/checklot_back.png) ;
+  background-position: center;
+  /*画像のサイズを指定する*/
+  -webkit-background-size: 100vw auto;
+   background-size:  100vw auto;
+   /* animation:アニメーション名 , アニメーションの時間 , アニメーションのタイミング , アニメーションの繰り返し */
+   -webkit-animation: bgscroll 20s linear infinite;
+   animation: bgscroll 20s linear infinite;
+}
+@-webkit-keyframes bgscroll {
+ 0% {background-position: 0 0;}
+ 100% {background-position: 0 1500px;}
+}
+
+@keyframes bgscroll {
+ 0% {background-position: 0 0;}
+ 100% {background-position: 0 1500px;}
+}
+#btn-info{
+  position: fixed;
+  top: 2vw; right: 2vw;
+  font-size: 10vw;
+  color: red;
+}
+#info-back{
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: none;
+}
+#info{
+    background-color: #fff;
+    position: fixed;
+    top: 10vw; left: 10vw; right: 10vw; bottom: 10vw;
+    overflow: scroll;
+}
+#info .paragraph{
+  padding: 0 2vw;
+}
+#info h3{
+    border-bottom: solid red 2px;
+    padding-left: 2vw;
+}
+#info #btn-close{
+    padding: 1vw;
+    top: 0; left: 0; right: 0;
+    display: block;
+    background-color: blue;
+    font-size: 5vw;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+}
+#title {
+      position: fixed;
+      font-size: 16vw;
+      top: calc(40vh - 30px);
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 5;
+  }
+  #title span{
+    opacity: 0;
+    -webkit-animation: fadeIn 2s 2s linear forwards;
+    -moz-animation: fadeIn 2s 2s linear forwards;
+    animation: fadeIn 2s 2s linear forwards;
+  }
+  #title::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: red;
+    animation: drawUnderline 2s linear forwards ;
+  }
+  @keyframes drawUnderline {
+        0% { transform: scale(0, 1); }
+        100% { transform: scale(0.7, 1); }
+    }
+  @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+  .circle {
+      position: fixed;
+      top: calc(60vh - 60px);
+      left: calc(50vw - 60px);
+      width: 120px;
+      height: 120px;
+      background: red;
+      border-radius: 50%;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+  }
+  .circle::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -60px;
+      width: 120px;
+      height: 120px;
+      background: #fff;
+      transform-origin: right 60px;
+      z-index: 3;
+      -webkit-animation: rotate-circle-left 2s linear forwards;
+      -moz-animation: rotate-circle-left 2s linear forwards;
+      animation: rotate-circle-left 2s linear forwards;
+  }
+  .circle::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 60px;
+      width: 120px;
+      height: 120px;
+      background: #fff;
+      transform-origin: left 60px;
+      z-index: 2;
+      -webkit-animation: rotate-circle-right 2s linear forwards;
+      -moz-animation:rotate-circle-right 2s linear forwards;
+      animation: rotate-circle-right 2s linear forwards;
+  }
+  .circle .circle-inner {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 110px;
+      height: 70px;
+      padding-top: 40px;
+      background: #fff;
+      border-radius: 50%;
+      z-index: 4;
+      font-size: 8vw;
+  }
+  @keyframes rotate-circle-right {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+  }
+  @keyframes rotate-circle-left {
+      0%   {
+          transform: rotate(0deg);
+          background: #fff;
+      }
+      50%  {
+          transform: rotate(180deg);
+          background: #fff;
+      }
+      50.01% {
+          transform: rotate(360deg);
+          background: red;
+      }
+      100% {
+          transform: rotate(360deg);
+          background: red;
+      }
+  }
+
+.label-to-fullscreen{
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 10;
+      background-color: rgba(255, 255, 255 255);
+      text-align: center;
+}
+/* 点滅 */
+  .blinking{
+      opacity:0;
+      -webkit-animation:blink 1.5s ease-in-out infinite alternate 2s;
+      -moz-animation:blink 1.5s ease-in-out infinite alternate 2s;
+      animation:blink 1.5s ease-in-out infinite alternate 2s;
+  }
+  @-webkit-keyframes blink{
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+  @-moz-keyframes blink{
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+  @keyframes blink{
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+
+/*丸→ background-color: #E05858; */
+#input-image{
+  display: none;
+}
+
+#main-canvas{
+    display: none;
+    background: #fff;
+}
+button{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+  }
+.btn-blue{
+    font-size: 5vw;
+    background-color: blue;
+    color: #fff;
+}
+.btn-red{
+    font-size: 5vw;
+    background-color: red;
+    color: #fff;
+}
+.btn-bottom{
+    padding: 1vh;
+    position: fixed;
+    bottom: 0;
+    border: 1px #ccc solid;
+}
+#btn-clear{
+    display: none;
+    width: 50vw;
+    left: 0;
+}
+#btn-choice{
+    display: none;
+    width: 50vw;
+    right: 0;
+}
+#btn-decide{
+    display: none;
+    width: 100vw;
+}
+.footer{
+  text-align: center;
+  margin-top: 2vh;
+  padding-top: 2vh;
+  border-top: solid blue 2px;
+}
+
+@media screen and (min-width: 481px) {
+  html,  body{
+  }
+  #title {
+        font-size: 10vw;
+        top: 20vh;
+    }
+    @keyframes drawUnderline {
+          0% { transform: scale(0, 1); }
+          100% { transform: scale(0.5, 1); }
+      }
+    .circle .circle-inner {
+          font-size: 2vw;
+      }
+      .btn-blue{
+          font-size: 2vw;
+          background-color: blue;
+          color: #fff;
+      }
+      .btn-red{
+          font-size: 2vw;
+          background-color: red;
+          color: #fff;
+      }
+      .btn-bottom{
+          padding: 1vh;
+          position: fixed;
+          bottom: 0;
+          border: 1px #ccc solid;
+      }
+      #btn-clear{
+          display: none;
+          width: 20vw;
+          left: 0;
+      }
+      #btn-choice{
+          display: none;
+          width: 20vw;
+          right: 0;
+      }
+      #btn-decide{
+          display: none;
+          width: 100vw;
+      }
+      #btn-info{
+        position: fixed;
+        top: 2vw; right: 2vw;
+        font-size: 4vw;
+        color: red;
+      }
+      #info #btn-close{
+          padding: 4px;
+          top: 0; left: 0; right: 0;
+          display: block;
+          background-color: blue;
+          font-size: 2vw;
+          color: #fff;
+          width: 100%;
+          overflow: hidden;
+      }
+      #info{
+          top: 4vw; left: 10vw; right: 10vw; bottom: 4vw;
+      }
+ }
