@@ -268,16 +268,16 @@ window.addEventListener("load", function () {
                 //console.log(drumNum);
                 if(exifnum == 3){
                   drawExif3(img);
-                  choiceHorizontalImg(drumNum);
+                  choiceVerticalImg(drumNum);
                 } else if(exifnum == 6){
                   drawExif6(img);
-                  choiceHorizontalImg(drumNum);
+                  choiceVerticalImg(drumNum);
                 } else if(exifnum == 8){
                   drawExif8(img);
-                  choiceHorizontalImg(drumNum);
+                  choiceVerticalImg(drumNum);
                 } else {
                   drawExifnormal(img);
-                  choiceHorizontalImg(drumNum);
+                  choiceVerticalImg(drumNum);
                 }
             count++;
               if(count > 40){
@@ -304,16 +304,16 @@ window.addEventListener("load", function () {
           //対象のところ以外を黒く塗りつぶす
           if(exifnum == 3){
             drawExif3(img);
-            choiceHorizontalImg(random);
+            choiceVerticalImg(random);
           } else if(exifnum == 6){
             drawExif6(img);
-            choiceHorizontalImg(random);
+            choiceVerticalImg(random);
           } else if(exifnum == 8){
             drawExif8(img);
-            choiceHorizontalImg(random);
+            choiceVerticalImg(random);
           } else {
             drawExifnormal(img);
-            choiceHorizontalImg(random);
+            choiceVerticalImg(random);
           }
           choiceOne(random);
     }
