@@ -271,10 +271,10 @@ window.addEventListener("load", function () {
                   choiceVerticalImg(drumNum);
                 } else if(exifnum == 6){
                   drawExif6(img);
-                  choiceVerticalImg(drumNum);
+                  choiceHorizontalImg(drumNum);
                 } else if(exifnum == 8){
                   drawExif8(img);
-                  choiceVerticalImg(drumNum);
+                  choiceHorizontalImg(drumNum);
                 } else {
                   drawExifnormal(img);
                   choiceVerticalImg(drumNum);
@@ -307,10 +307,10 @@ window.addEventListener("load", function () {
             choiceVerticalImg(random);
           } else if(exifnum == 6){
             drawExif6(img);
-            choiceVerticalImg(random);
+            choiceHorizontalImg(random);
           } else if(exifnum == 8){
             drawExif8(img);
-            choiceVerticalImg(random);
+            choiceHorizontalImg(random);
           } else {
             drawExifnormal(img);
             choiceVerticalImg(random);
@@ -368,7 +368,8 @@ window.addEventListener("load", function () {
         canvas.width = h;
         canvas.height = w;
         c.rotate(Math.PI * 0.5);
-        c.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, -h, w, h);
+        //c.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, -h, w, h);
+        c.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, w, h);
         c.rotate(-Math.PI * 0.5);
     }
     function drawExif8(img){
